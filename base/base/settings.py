@@ -46,6 +46,8 @@ INSTALLED_APPS = [
 
     'rest_framework',  # register django REST framework
 
+    'django_filters', # for filter API
+
     'events.apps.EventsConfig' # my new application
 ]
 
