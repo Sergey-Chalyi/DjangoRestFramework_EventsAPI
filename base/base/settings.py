@@ -46,9 +46,9 @@ INSTALLED_APPS = [
 
     'rest_framework',  # register django REST framework
 
-    'django_filters', # for filter API
+    'django_filters', # to use django filters
 
-    'events.apps.EventsConfig' # my new application
+    'events.apps.EventsConfig' # events app
 ]
 
 MIDDLEWARE = [
@@ -140,7 +140,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# social app custom sett
+
+# social app custom settings
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
