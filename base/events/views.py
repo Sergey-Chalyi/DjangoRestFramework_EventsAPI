@@ -39,7 +39,7 @@ class EventFilter(django_filters.FilterSet):
 class EventsAPIViews(generics.ListCreateAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.IsAuthenticated]
 
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_class = EventFilter
