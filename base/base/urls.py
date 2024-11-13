@@ -16,12 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from events.views import EventsAPIViews, EventDetailAPIViews, login, logout_view, home
+from django.urls import include
 
-from events.views import EventsAPIViews, EventDetailAPIViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('api/v1/events/', EventsAPIViews.as_view()),
     path('api/v1/events/<int:pk>/', EventDetailAPIViews.as_view()),
+
+    path('login/', login, name='login'),
+    path('logout/', logout_view, name='logout'),
+    path('social-auth/', include('social_django.urls', namespace='social')),
+    path('', home, name='home'),
 ]
